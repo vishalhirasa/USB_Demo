@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for MPanel Software</title>
+    <link rel="stylesheet" href="css/style.css?v=0.2">
+</head>
+<body>
+
+    <!-- header_section start -->
+
+    <section class="custom_header">
+		<header>
+            <div class="logo">
+                <a href="../welcome.html"><img src="images/MPPS_Logo_DkBg-2021-264x100-1.png"></a>
+            </div>
+                <div class="header_btn">
+                    <a href="https://www.textiles.org/"><img src="images/header/usb_layout-1.png"></a>
+                    <a href="https://www.specialisedtextiles.com.au/"><img src="images/header/usb_layout-2.png"></a>
+                    <a href="http://tensinet.com/"><img src="images/header/usb_layout-3.png"></a>
+                </div>
+        </header>
+    </section>
+
+	<!-- header_section end -->
+
+      <div class="custom_container">
+        <div class="register_page wpcf7 js" id="wpcf7-f3274-p14604-o1">
+			<div class="custom_heading">
+				<h3>Register for Non-CAD Demo products</h3>
+			</div>
+			<form id="registerForm">
+				<div class="custom_input">
+					<label for="first-name">Your Name:</label>
+					<input type="text" id="fullName" autocomplete="off" required>
+					<input type="hidden" id="first_name" name="First-Name">
+					<input type="hidden" id="last_name" name="Last-Name">
+				</div>
+
+				<div class="custom_input">
+					<label for="company-name">Company Name:</label>
+					<input type="text" id="company_name" name="Company-Name" required>
+				</div>
+
+				<div class="custom_input">
+					<label for="email">Your Email:</label>
+					<input type="email" id="email_address" name="your-email" required>
+					<input type="hidden" id="your_password" name="your-password" value="">
+				</div>
+				<div id="loader" style="display:none;">Loading...</div>
+				<div class="input_btn custom_right_btn" style="float:right">
+					<input type="hidden" id="product" name="software">
+					<input type="hidden" id="customer_industry" name="customer_industry" value="Other">
+					<input type="hidden" id="your-country" name="your-country" value="US">
+					<input type="hidden" id="your-state" name="your-state" value="Demo">
+					<input type="hidden" id="your-city" name="your-city" value="IFAI24">
+					<input type="hidden" id="your-unit_tag" name="_wpcf7_unit_tag" value="wpcf7-f3274-p14604-o1">
+					<input type="hidden" id="your-website" name="your-website" value="https://mpanel.com">
+					<input type="hidden" id="whitelisting" name="whitelisting[]" value="1">
+					<input type="hidden" id="privacy" name="privacy[]" value="1">
+					<input type="hidden" id="CAD-product" name="CAD-product" value="None">
+					<input type="submit" value="Get Demo License" class="submit_btn">
+					<small><i>License key will be emailed to the address above.</i></small>
+				</div>
+			</form>
+		</div><br><br><br>
+		<div class="custom_container_product">
+			<div class="product">
+				<a href="https://vimeo.com/528772773" class="product_btn" target="_blank">Installation Instructions</a>&nbsp;&nbsp;
+			</div>
+			<div class="product">
+				<a href="#" onclick="openLink()" class="product_btn">Install</a>&nbsp;&nbsp;
+			</div>
+			<div class="product">
+				<a href="../welcome.html" class="product_btn">Back to Products page</a>
+			</div>
+		</div>
+	</div>
+<!-- footer section start -->
+	<footer>
+		<div class="copyright">
+			<p>©2024 MPanel Software Solutions LLC. All Rights Reserved.</p>
+		</div>
+    </footer>
+<script>
+		// Function for download Software files
+		function openLink() {
+			var product = document.getElementById("product").value;
+			var filePath = "";
+
+			if (product == "MPanel Shade Designer Demo") {
+				filePath = "file:///M:/data/mpanel-software/Setup_MPanelShadeDesigner_160.exe";
+			} else if (product == "MPanel Awning Designer Demo") {
+				filePath = "file:///M:/data/mpanel-software/Setup_MPanelAwningDesigner_12.exe";
+			} else if (product == "MPanel InSite Demo") {
+				filePath = "file:///M:/data/mpanel-software/Setup_MPanel_InSite_70.exe";
+			}
+
+			if (filePath) {
+				var link = document.createElement("a");
+				link.href = filePath;
+				link.download = filePath.split('/').pop();
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+			}
+		}
+		
+		function openPopup() {
+			document.getElementById("popup").style.display = "block";
+		}
+
+		function closePopup() {
+			document.getElementById("popup").style.display = "none";
+		}
+        // Function to get query string parameters
+        function getQueryParams(url) {
+            let params = {};
+            let parser = new URL(url);
+            let queryString = parser.search.substring(1);
+            let queries = queryString.split("&");
+
+            queries.forEach(function(query) {
+                let pair = query.split("=");
+                params[pair[0]] = decodeURIComponent(pair[1]);
+            });
+
+            return params;
+        }
+
+        // Get the current URL
+        let currentUrl = window.location.href;
+
+        // Get query parameters from the current URL
+        let queryParams = getQueryParams(currentUrl);
+
+		let productValue = queryParams["product"].replace(/_/g, ' ');
+        // Set hidden field values
+        document.getElementById("product").value = productValue;
+		
+		//Handle the Form Request
+		document.getElementById('registerForm').addEventListener('submit', function(event) {
+			event.preventDefault();
+			document.getElementById('loader').style.display = 'block';
+			var emailValue = document.getElementById('email_address').value;
+			document.getElementById('your_password').value = emailValue;
+			const fullName = document.getElementById('fullName').value.trim();
+			const nameParts = fullName.split(' ');
+			if (nameParts.length > 1) {
+				document.getElementById('first_name').value = nameParts[0]; // First name
+				document.getElementById('last_name').value = nameParts.slice(1).join(' '); // Last name
+			} else {
+				document.getElementById('first_name').value = fullName;
+				document.getElementById('last_name').value = 'na';
+			}
+			let formData = new FormData(this);
+			// Send data via AJAX to the WordPress site with Contact Form 7
+			fetch('https://mpanel.com/wp-json/contact-form-7/v1/contact-forms/3274/feedback', {
+				method: 'POST',
+				body: formData
+			})
+			.then(response => response.json())
+			.then(result => {
+				document.getElementById('loader').style.display = 'none';
+				if(result.status === 'mail_sent') {
+					//alert('Form successfully submitted');
+					window.location.href = "../welcome.html";
+				} else {
+					alert('Failed to submit the form');
+				}
+			})
+			.catch(error => console.error('Error:', error));
+		});
+</script>
+<!-- footer section end -->
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MPanel</title>
+    
+
+<link rel="stylesheet" href="css/style.css?v=0.2">
+    <style>
+       
+</style>
+</head>
+<body>
+<!-- header_section start -->
+
+    <section class="custom_header">
+		<header>
+            <div class="logo">
+                <a href="../welcome.html"><img src="images/MPPS_Logo_DkBg-2021-264x100-1.png"></a>
+            </div>
+                <div class="header_btn">
+                    <a href="https://www.textiles.org/"><img src="images/header/usb_layout-1.png"></a>
+                    <a href="https://www.specialisedtextiles.com.au/"><img src="images/header/usb_layout-2.png"></a>
+                    <a href="http://tensinet.com/"><img src="images/header/usb_layout-3.png"></a>
+                </div>
+        </header>
+    </section>
+
+<!-- header_section end -->
+
+
+
+
+
+
+<div class="single_page">
+    <div class="single_page_container">
+    <div class="left_side_content">
+        <h2>MPanel Awning Designer</h2>
+        <p>Accurate Awning modeling and patterning without CAD</p>
+        <div class="left_side_btns">
+            <a href="pdf/MPAD-Letter.pdf" class="bg_green_btn">Brochure</a>
+              <a href="awning-register.html?product=MPanel_Awning_Designer_Demo" class="bg_grey_btn">Try Demo</a>
+			  <a href="../welcome.html" class="bg_green_btn">Back</a>
+        </div>
+    </div>
+    <div class="right_side_content">
+        <div class="single_img">
+        <img src="images/asw-shade.png" alt="">
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<div class="key_feauture_single_page">
+    <div class="key-feature-section-bg single_page">
+        <div class="heading_key_feature">
+
+<h1>Key Featured of<br/>
+MPanel Awning Designer</h1>
+</div>
+
+<div class="list_key_feature">
+<ul>
+<li>Produces awning designs and patterns in minutes</li>
+<li>Accurate and reproducable</li>
+<li>No CAD required</li>
+<li>Any staff member can use it</li>
+</ul>
+</div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="work_flow_section">
+    <div class="single_page">
+        <div class="heading">
+
+         <h1>Work Flow</h1>
+
+        </div>
+
+
+        <div class="work-flow-content">
+						<div class="box">
+                            <div class="flow-box">
+                                <span>1</span>
+                            </div>
+                            <h6>Choose Awning Design</h6>
+                        </div>
+                                            <div class="box">
+                            <div class="flow-box">
+                                <span>2</span>
+                            </div>
+                            <h6>Enter Dimensions</h6>
+                        </div>
+                                            <div class="box">
+                            <div class="flow-box">
+                                <span>3</span>
+                            </div>
+                            <h6>Select Fabric</h6>
+                        </div>
+                                            <div class="box">
+                            <div class="flow-box">
+                                <span>4</span>
+                            </div>
+                            <h6>Select Volance</h6>
+                        </div>
+                                            <div class="box">
+                            <div class="flow-box">
+                                <span>5</span>
+                            </div>
+                            <h6>Produce Patterns</h6>
+                        </div>
+                                            <div class="box">
+                            <div class="flow-box">
+                                <span>6</span>
+                            </div>
+                            <h6>Add Seams</h6>
+                        </div>
+                                            <div class="box">
+                            <div class="flow-box">
+                                <span>7</span>
+                            </div>
+                            <h6>Output to plotter or printer</h6>
+                        </div>
+                                    </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="video-section-bg">
+    <div class="single_page">
+        <div class="heading">
+
+         <h1>Short video showing<br/>
+the program workflow</h1>
+
+        </div>
+
+        <div class="video">
+            <iframe src="images/IntroducingMPanelAwningDesigner.mp4" allowfullscreen=""></iframe>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="screen_shots custom_slider">
+    <div class="single_page">
+         <div class="heading">
+<h1>Screen Shots</h1>
+
+        </div>
+
+
+
+        <div class="carousel">
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <div class="slides">
+            <div class="slide"><img src="images/Design.PNG" alt="Image 1"></div>
+            <div class="slide"><img src="images/edges dropdown.PNG" alt="Image 2"></div>
+            <div class="slide"><img src="images/Add Fabric1.png" alt="Image 3"></div>
+            <div class="slide"><img src="images/design dropdown.PNG" alt="Image 3"></div>
+			<div class="slide"><img src="images/seams dropdown.PNG" alt="Image 3"></div>
+            <div class="slide"><img src="images/valance dropdown.PNG" alt="Image 3"></div>
+            <div class="slide"><img src="images/Reports.PNG" alt="Image 4"></div>
+        </div>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+</div>
+
+
+    </div>
+    <div class="line">
+        
+    </div>
+
+
+
+
+
+
+<!-- footer section start -->
+    <footer>
+        <div class="copyright">
+            <p>©2024 MPanel Software Solutions LLC. All Rights Reserved.</p>
+        </div>
+    </footer>
+<!-- footer section end -->
+
+
+
+
+
+<script>
+   let currentIndex = 0;
+
+function showSlider(index) {
+    const slides = document.querySelector('.second .slides');
+    const totalSlides = document.querySelectorAll('.second .slide').length;
+
+    if (index >= totalSlides) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+    } else {
+        currentIndex = index;
+    }
+
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    if (index >= totalSlides) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+    } else {
+        currentIndex = index;
+    }
+
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+function nextSlide() {
+    showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+function nextSlides() {
+    showSlider(currentIndex + 1);
+}
+
+function prevSlides() {
+    showSlider(currentIndex - 1);
+}
+
+</script>
+</body>
+</html>
